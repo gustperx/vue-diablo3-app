@@ -1,9 +1,5 @@
-<script setup lang="ts">
-import TheWelcome from '@/components/TheWelcome.vue'
-</script>
+<script setup lang="ts"></script>
 
 <template>
-  <main>
-    <TheWelcome />
-  </main>
+  <h1 class="text-center text-2xl text-zinc-800">Home View</h1>
 </template>
