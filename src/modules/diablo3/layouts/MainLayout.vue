@@ -21,6 +21,6 @@ import DiabloHeader from "../components/DiabloHeader.vue";
 import DiabloFooter from "../components/DiabloFooter.vue";
 
 const oAuthStore = useOauthStore();
-onMounted(() => oAuthStore.getToken());
 const isLoading = computed(() => oAuthStore.isLoading);
+onMounted(() => oAuthStore.getToken());
 </script>

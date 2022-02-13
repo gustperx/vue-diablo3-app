@@ -18,20 +18,20 @@ const useOauthStore = defineStore("oauthStore", {
       this.isLoading = true;
       const token = sessionStorage.getItem(nameSessionStorage);
       if (token) {
-        console.log("token from sessionStorage");
+        console.warn("token from sessionStorage");
         this.token = token;
         this.isLoading = false;
       } else {
         await getToken()
           .then(({ data }) => {
-            console.log("token from oauth");
+            console.warn("token from oauth");
             this.token = data.access_token;
             this.isLoading = false;
             sessionStorage.setItem(nameSessionStorage, data.access_token);
           })
           .catch((err) => {
             this.isLoading = false;
-            console.log(err);
+            console.error(err);
           });
       }
     },
