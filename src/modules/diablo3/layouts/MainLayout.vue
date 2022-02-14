@@ -11,16 +11,17 @@
 </template>
 
 <script lang="ts" setup>
-import { computed, onMounted } from "vue";
+import { computed } from "vue";
 import { RouterView } from "vue-router";
 
 import TheLoader from "@/components/TheLoader.vue";
 
-import { useOauthStore } from "../stores/oauth";
+import { useOauthStore } from "../stores/oauthStore";
 import DiabloHeader from "../components/DiabloHeader.vue";
 import DiabloFooter from "../components/DiabloFooter.vue";
 
 const oAuthStore = useOauthStore();
 const isLoading = computed(() => oAuthStore.isLoading);
-onMounted(() => oAuthStore.getToken());
+
+oAuthStore.getToken();
 </script>

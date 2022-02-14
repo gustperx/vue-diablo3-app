@@ -1,12 +1,17 @@
 <template>
-  <div class="mt-8 flex flex-col items-center justify-center">
-    <h1>Profile Base</h1>
+  <div class="vld-parent mt-8 flex flex-col items-center justify-center">
+    <TheLoader :isLoading="isLoading" />
+
+    <div v-if="!isLoading">
+      <p>Profile Base</p>
+    </div>
   </div>
 </template>
 
 <script lang="ts" setup>
-import { onMounted } from "vue";
-import { useProfileAccountStore } from "../../stores/profileAccount";
+import { computed } from "vue";
+import { useProfileAccountStore } from "../../stores/profileAccountStore";
+import TheLoader from "../../../../components/TheLoader.vue";
 
 interface Props {
   region: string;
@@ -16,5 +21,7 @@ interface Props {
 const props = defineProps<Props>();
 const profileAccountStore = useProfileAccountStore();
 
-onMounted(() => profileAccountStore.getProfile(props.region, props.battleTag));
+const isLoading = computed(() => profileAccountStore.isLoading);
+
+profileAccountStore.getProfile(props.region, props.battleTag);
 </script>
