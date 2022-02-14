@@ -1,6 +1,6 @@
 <template>
   <div class="vld-parent mt-8 flex flex-col items-center justify-center">
-    <TheLoader :isLoading="isLoading" />
+    <TheLoader :isLoading="isLoading" color="red" message="Loading Profile" />
 
     <div v-if="!isLoading">
       <p>Profile Base</p>
@@ -11,7 +11,7 @@
 <script lang="ts" setup>
 import { computed } from "vue";
 import { useProfileAccountStore } from "../../stores/profileAccountStore";
-import TheLoader from "../../../../components/TheLoader.vue";
+import TheLoader from "@/components/TheLoader.vue";
 
 interface Props {
   region: string;

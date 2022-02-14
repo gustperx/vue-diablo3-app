@@ -4,8 +4,8 @@
     :loader="loader || 'spinner'"
     :color="color || '#075985'"
     :opacity="0"
-    :height="128"
-    :width="128"
+    :height="100"
+    :width="100"
     :can-cancel="false"
     :is-full-page="false"
   />
@@ -13,7 +13,12 @@
   <div
     v-if="isLoading"
     class="flex h-96 w-full flex-col items-center justify-start"
-  ></div>
+  >
+    <div v-if="message" class="mt-12 text-center">
+      <h3 class="text-2xl">{{ message }}</h3>
+      <h4 class="mt-4 text-xl">Please wait</h4>
+    </div>
+  </div>
 </template>
 
 <script lang="ts" setup>
@@ -24,6 +29,7 @@ interface Props {
   isLoading: boolean;
   loader?: string;
   color?: string;
+  message?: string;
 }
 
 defineProps<Props>();
