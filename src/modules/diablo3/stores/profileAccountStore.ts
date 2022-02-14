@@ -1,22 +1,25 @@
 import { defineStore } from "pinia";
 import { blizzardProfileApi } from "../api/diablo/search";
 import type { ProfileAccount } from "../interfaces/profileAccount";
-import type { profileAccountStore } from "../interfaces/profileAccountStore";
+import type {
+  profileAccountState,
+  userParamsProfileAccount,
+} from "../interfaces/profileAccountStore";
 import { useOauthStore } from "./oauthStore";
 
 const useProfileAccountStore = defineStore("profileAccount", {
-  state: (): profileAccountStore => {
+  state: (): profileAccountState => {
     return {
       isLoading: false,
       profile: undefined,
     };
   },
   actions: {
-    async getProfile(region: string, account: string) {
+    async getProfile(props: userParamsProfileAccount) {
       try {
         if (this.profile) {
           const accountName = this.profile.battleTag.replace("#", "-");
-          if (accountName === account) {
+          if (accountName === props.battleTag) {
             return;
           }
           this.profile = undefined;
@@ -24,8 +27,8 @@ const useProfileAccountStore = defineStore("profileAccount", {
 
         const oAuthStore = useOauthStore();
 
-        const apiClient = blizzardProfileApi(region);
-        const resource = `/d3/profile/${account}/`;
+        const apiClient = blizzardProfileApi(props.region);
+        const resource = `/d3/profile/${props.battleTag}/`;
         const locale = "en_US";
 
         const params = {
@@ -41,9 +44,9 @@ const useProfileAccountStore = defineStore("profileAccount", {
         this.profile = data;
         this.isLoading = false;
         console.warn("profile from Api");
-      } catch (error) {
+      } catch (err) {
         this.isLoading = false;
-        console.error(error);
+        throw new Error(`${err}`);
       }
     },
   },

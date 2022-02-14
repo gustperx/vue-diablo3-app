@@ -3,25 +3,24 @@
     <TheLoader :isLoading="isLoading" color="red" message="Loading Profile" />
 
     <div v-if="!isLoading">
-      <p>Profile Base</p>
+      <code>
+        {{ profile }}
+      </code>
     </div>
   </div>
 </template>
 
 <script lang="ts" setup>
-import { computed } from "vue";
-import { useProfileAccountStore } from "../../stores/profileAccountStore";
 import TheLoader from "@/components/TheLoader.vue";
+import { useProfile } from "../../composables/useProfile";
 
-interface Props {
-  region: string;
+const props = defineProps<{
   battleTag: string;
-}
+  region: string;
+}>();
 
-const props = defineProps<Props>();
-const profileAccountStore = useProfileAccountStore();
-
-const isLoading = computed(() => profileAccountStore.isLoading);
-
-profileAccountStore.getProfile(props.region, props.battleTag);
+const { isLoading, profile } = useProfile({
+  battleTag: props.battleTag,
+  region: props.region,
+});
 </script>

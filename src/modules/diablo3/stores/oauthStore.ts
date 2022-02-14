@@ -1,12 +1,12 @@
 import { defineStore } from "pinia";
 import { blizzardOauhtApi } from "../api/oauth";
-import type { oauthStore } from "../interfaces/aouthStore";
+import type { oauthState } from "../interfaces/aouthStore";
 
 const clientId: string = import.meta.env.VITE_DIABLO3_APP_CLIENT_ID;
 const clientSecret: string = import.meta.env.VITE_DIABLO3_APP_CLIENT_SECRET;
 
 const useOauthStore = defineStore("oauthStore", {
-  state: (): oauthStore => {
+  state: (): oauthState => {
     return {
       isLoading: false,
       token: undefined,
