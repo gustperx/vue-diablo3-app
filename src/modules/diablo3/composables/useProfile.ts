@@ -10,9 +10,6 @@ const useProfile = (props: userParamsProfileAccount) => {
   const errorStore = useErrorStore();
   const profileAccountStore = useProfileAccountStore();
 
-  const isLoading = computed(() => profileAccountStore.isLoading);
-  const profile = computed(() => profileAccountStore.profile);
-
   // Get profile
   // SuperRambo-2613
   profileAccountStore.getProfile(props).catch((err) => {
@@ -25,8 +22,8 @@ const useProfile = (props: userParamsProfileAccount) => {
   });
 
   return {
-    isLoading,
-    profile,
+    isLoading: computed(() => profileAccountStore.isLoading),
+    profile: computed(() => profileAccountStore.profile),
   };
 };
 
