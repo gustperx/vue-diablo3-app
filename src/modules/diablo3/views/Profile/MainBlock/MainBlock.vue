@@ -1,17 +1,31 @@
 <template>
-  <div class="flex flex-col md:flex-row">
+  <div class="mx-4 flex flex-col md:mx-0 md:flex-row">
     <div class="basis-4/6">
-      Derecha
-      <div class="hero-demon-hunter female"></div>
+      <!-- <div class="hero-demon-hunter female"></div> -->
+      <TopHeroes v-if="hasHeroes" :heroes="topHeroes" />
+
+      <HeroesList v-if="hasHeroList" :heroes="heroList" />
     </div>
     <div class="basis-2/6">Izquierda</div>
   </div>
 </template>
 
 <script lang="ts" setup>
+import { computed } from "vue";
+import TopHeroes from "./TopHeroes/TopHeroes.vue";
+import HeroesList from "./HeroesList/HeroesList.vue";
 import type { ProfileAccount } from "@/modules/diablo3/interfaces/profileAccount";
 
-defineProps<{
+const props = defineProps<{
   profile: ProfileAccount;
 }>();
+
+// top heroes
+const hasHeroes = computed(() => props.profile.heroes.length > 0);
+const topHeroes = computed(() => props.profile.heroes.slice(0, 3));
+// lista heroes
+const hasHeroList = computed(() => props.profile.heroes.length > 0);
+const heroList = computed(() =>
+  props.profile.heroes.slice(0, props.profile.heroes.length)
+);
 </script>
