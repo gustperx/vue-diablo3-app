@@ -1,15 +1,14 @@
 <template>
-  <div class="hero-portrait-wrapper mb-5">
+  <div class="mb-4 flex flex-col items-center justify-between">
     <!-- Avatar -->
-    <div class="flex justify-center">
-      <!-- Imagen de fondo, según la clase y el género -->
+    <div class="">
       <div :class="heroClass"></div>
     </div>
-    <div class="bg-zinc-700 p-1">
+    <div class="w-[8.5rem] bg-gray-800 p-2">
       <!-- Nombre héroe -->
       <!-- Si es hardcore, pintamos el fondo rojo -->
       <div
-        class="title-name flex items-center justify-around truncate font-diablo"
+        class="flex items-center justify-around font-diablo font-bold"
         :class="hardcoreBgColor"
       >
         {{ heroName }}
@@ -50,11 +49,7 @@ const { heroClass, heroName, hardcoreBgColor, heroColorDead } = useHero({
 </script>
 
 <style scoped>
-.hero-portrait-wrapper .title-name {
-  color: #fff;
-  font-weight: 900;
-}
-.hero-portrait-wrapper .level-circle {
+.level-circle {
   width: 26px;
   height: 26px;
   padding: 4px;

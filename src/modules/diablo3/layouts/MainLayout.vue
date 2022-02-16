@@ -1,5 +1,5 @@
 <template>
-  <div class="vld-parent h-screen bg-gray-900 text-neutral-100">
+  <div class="vld-parent bg-slate-900 text-neutral-100">
     <TheLoader :isLoading="isLoading" color="red" message="Loading" />
 
     <div v-if="!isLoading" class="mx-auto max-w-6xl py-6 sm:px-6 lg:px-8">

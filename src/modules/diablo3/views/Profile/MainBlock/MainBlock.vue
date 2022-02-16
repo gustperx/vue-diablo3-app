@@ -1,10 +1,11 @@
 <template>
   <div class="mx-4 flex flex-col md:mx-0 md:flex-row">
     <div class="basis-4/6">
-      <!-- <div class="hero-demon-hunter female"></div> -->
       <TopHeroes v-if="hasHeroes" :heroes="topHeroes" />
 
       <HeroesList v-if="hasHeroList" :heroes="heroList" />
+
+      <ProgressList :acts="profile.progression" />
     </div>
     <div class="basis-2/6">Izquierda</div>
   </div>
@@ -15,6 +16,7 @@ import { computed } from "vue";
 import TopHeroes from "./TopHeroes/TopHeroes.vue";
 import HeroesList from "./HeroesList/HeroesList.vue";
 import type { ProfileAccount } from "@/modules/diablo3/interfaces/profileAccount";
+import ProgressList from "./ProgressList/ProgressList.vue";
 
 const props = defineProps<{
   profile: ProfileAccount;
