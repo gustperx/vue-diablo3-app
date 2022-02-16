@@ -20,8 +20,27 @@ const props = defineProps<{
 }>();
 
 const status = props.act.value ? "done" : "pending";
+let act: string;
 
-const fullActName = computed(() => `Act ${props.act.actNum}`);
+switch (props.act.actNum) {
+  case "act1":
+    act = "I";
+    break;
+  case "act2":
+    act = "II";
+    break;
+  case "act3":
+    act = "III";
+    break;
+  case "act4":
+    act = "IV";
+    break;
+  case "act5":
+    act = "V";
+    break;
+}
+
+const fullActName = computed(() => `Act ${act}`);
 const actClass = computed(() => `${props.act.actNum} ${status}`);
 const actTitle = computed(() =>
   props.act.value ? "Act completed!" : "Act uncompleted"
