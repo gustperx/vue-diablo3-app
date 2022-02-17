@@ -1,5 +1,5 @@
 <template>
-  <footer class="mt-4">
+  <footer class="mt-8 md:mt-20">
     <div class="flex flex-col items-center justify-center">
       <DiabloFooterPoweredBy :icons="icons" />
     </div>

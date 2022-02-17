@@ -1,5 +1,5 @@
 <template>
-  <div class="mt-4 mb-12 pt-4 md:mt-8">
+  <div class="mt-4 pt-4 md:mt-8">
     <h2 class="mb-4 font-diablo text-2xl">Progression</h2>
     <div class="flex flex-col justify-around md:flex-row">
       <div v-for="(val, key) in actsOrden" :key="key">
