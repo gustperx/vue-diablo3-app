@@ -1,4 +1,5 @@
 import { computed } from "vue";
+import { textToCapitalize } from "@/helpers/basics";
 import type { Hero } from "../interfaces/profileAccount";
 
 const useHero = (heroe: Hero) => {
@@ -21,14 +22,7 @@ const useHero = (heroe: Hero) => {
     heroColorDead: computed(() => (heroe.dead ? "text-red-700" : "")),
 
     // method - demon-hunter -> Demon Hunter
-    classToName: (classSlug: string) => {
-      const name = classSlug.replace("-", " ");
-      const arr = name.split(" ");
-      for (let i = 0; i < arr.length; i++) {
-        arr[i] = arr[i].charAt(0).toUpperCase() + arr[i].slice(1);
-      }
-      return arr.join(" ");
-    },
+    classToName: (classSlug: string) => textToCapitalize(classSlug, "-"),
   };
 };
 
