@@ -4,17 +4,11 @@
   <table class="w-full table-auto border-collapse text-sm md:table-fixed">
     <thead>
       <tr>
-        <th
-          class="border-b p-4 pl-8 pt-0 pb-3 text-left font-medium text-slate-100"
-        >
+        <th class="border-b p-4 pl-8 pt-0 pb-3 text-left text-slate-100">
           Name
         </th>
-        <th class="border-b p-4 pt-0 pb-3 text-left font-medium text-slate-100">
-          Class
-        </th>
-        <th
-          class="border-b p-4 pr-8 pt-0 pb-3 text-left font-medium text-slate-100"
-        >
+        <th class="border-b p-4 pt-0 pb-3 text-left text-slate-100">Class</th>
+        <th class="border-b p-4 pr-8 pt-0 pb-3 text-left text-slate-100">
           Elite Kills
         </th>
       </tr>
