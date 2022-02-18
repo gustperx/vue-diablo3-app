@@ -1,5 +1,5 @@
 <template>
-  <div class="hero-ico flex items-center">
+  <div class="hero-ico flex cursor-pointer items-center" @click="goToHero">
     <span class="hero-image border" :class="heroClassImg" />
     <span class="hero-name ml-2 font-bold" :class="hardcoreBgColor">
       {{ heroName }}
@@ -21,7 +21,9 @@ const props = defineProps<{
   heroe: Hero;
 }>();
 
-const { heroClassImg, heroName, hardcoreBgColor } = useHero({ ...props.heroe });
+const { heroClassImg, heroName, hardcoreBgColor, goToHero } = useHero({
+  ...props.heroe,
+});
 </script>
 
 <style scoped>

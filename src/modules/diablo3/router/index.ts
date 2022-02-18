@@ -23,6 +23,11 @@ const DiabloIIIRouter: RouteRecordRaw = {
     {
       path: "region/:region/profile/:battleTag/hero/:heroId",
       name: "diablo3-hero",
+      props: (router) => ({
+        heroId: router.params.heroId,
+        region: router.params.region,
+        battleTag: router.params.battleTag,
+      }),
       component: () => import("@/modules/diablo3/views/Hero/HeroView.vue"),
     },
     {

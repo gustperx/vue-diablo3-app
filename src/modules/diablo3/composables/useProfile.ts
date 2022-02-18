@@ -24,6 +24,8 @@ const useProfile = (props: userParamsProfileAccount) => {
   return {
     isLoading: computed(() => profileAccountStore.isLoading),
     profile: computed(() => profileAccountStore.profile),
+
+    artisans: computed(() => profileAccountStore.artisansData),
   };
 };
 

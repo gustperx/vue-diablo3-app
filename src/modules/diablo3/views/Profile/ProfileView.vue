@@ -5,6 +5,7 @@
 
     <template v-if="profile">
       <MainBlock :profile="profile" />
+      <ArtisansBlock :artisans="artisans" />
     </template>
   </div>
 </template>
@@ -12,6 +13,7 @@
 <script lang="ts" setup>
 import TheLoader from "@/components/TheLoader.vue";
 import MainBlock from "./MainBlock/MainBlock.vue";
+import ArtisansBlock from "./MainBlock/ArtisansBlock/ArtisansBlock.vue";
 import { useProfile } from "../../composables/useProfile";
 
 const props = defineProps<{
@@ -19,7 +21,7 @@ const props = defineProps<{
   region: string;
 }>();
 
-const { isLoading, profile } = useProfile({
+const { isLoading, profile, artisans } = useProfile({
   battleTag: props.battleTag,
   region: props.region,
 });

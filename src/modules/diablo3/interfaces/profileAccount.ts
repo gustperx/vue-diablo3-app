@@ -94,3 +94,20 @@ export interface TimePlayed {
   monk: number;
   crusader: number;
 }
+
+export interface Artisans {
+  blacksmith?: Blacksmith;
+  blacksmithHardcore?: Blacksmith;
+  jeweler?: Blacksmith;
+  jewelerHardcore?: Blacksmith;
+  mystic?: Blacksmith;
+  mysticHardcore?: Blacksmith;
+}
+
+export interface Artisan {
+  name: string;
+  icon: string;
+  color: string;
+  normal?: Blacksmith;
+  hardcore?: Blacksmith;
+}

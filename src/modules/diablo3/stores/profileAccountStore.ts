@@ -1,6 +1,6 @@
 import { defineStore } from "pinia";
 import { blizzardProfileApi } from "../api/diablo/search";
-import type { ProfileAccount } from "../interfaces/profileAccount";
+import type { Artisans, ProfileAccount } from "../interfaces/profileAccount";
 import type {
   profileAccountState,
   userParamsProfileAccount,
@@ -13,6 +13,21 @@ const useProfileAccountStore = defineStore("profileAccount", {
       isLoading: false,
       profile: undefined,
     };
+  },
+  getters: {
+    artisansData: (state): Artisans => {
+      if (state.profile) {
+        return {
+          blacksmith: state.profile.blacksmith,
+          blacksmithHardcore: state.profile.blacksmithHardcore,
+          jeweler: state.profile.jeweler,
+          jewelerHardcore: state.profile.jewelerHardcore,
+          mystic: state.profile.mystic,
+          mysticHardcore: state.profile.mysticHardcore,
+        };
+      }
+      return {};
+    },
   },
   actions: {
     async getProfile(props: userParamsProfileAccount) {

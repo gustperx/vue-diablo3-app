@@ -1,8 +1,12 @@
 import { computed } from "vue";
+import { useRoute, useRouter } from "vue-router";
 import { textToCapitalize } from "@/helpers/basics";
 import type { Hero } from "../interfaces/profileAccount";
 
 const useHero = (heroe: Hero) => {
+  const route = useRoute();
+  const router = useRouter();
+
   const gender = computed(() => (heroe.gender === 0 ? "male" : "female"));
   const hardcoreBoderColor = computed(() =>
     heroe.hardcore ? "border-red-700" : ""
@@ -23,6 +27,17 @@ const useHero = (heroe: Hero) => {
 
     // method - demon-hunter -> Demon Hunter
     classToName: (classSlug: string) => textToCapitalize(classSlug, "-"),
+
+    // redirect to hero
+    goToHero: () =>
+      router.push({
+        name: "diablo3-hero",
+        params: {
+          region: route.params.region,
+          battleTag: route.params.battleTag,
+          heroId: heroe.id,
+        },
+      }),
   };
 };
 

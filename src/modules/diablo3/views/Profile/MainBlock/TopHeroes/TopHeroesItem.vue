@@ -1,9 +1,11 @@
 <template>
-  <div class="mb-4 flex flex-col items-center justify-between">
+  <div
+    class="mb-4 flex cursor-pointer flex-col items-center justify-between"
+    @click="goToHero"
+  >
     <!-- Avatar -->
-    <div class="">
-      <div :class="heroClass"></div>
-    </div>
+    <div :class="heroClass"></div>
+
     <div class="w-[8.5rem] bg-gray-800 p-2">
       <!-- Nombre héroe -->
       <!-- Si es hardcore, pintamos el fondo rojo -->
@@ -43,9 +45,10 @@ const props = defineProps<{
   heroe: Hero;
 }>();
 
-const { heroClass, heroName, hardcoreBgColor, heroColorDead } = useHero({
-  ...props.heroe,
-});
+const { heroClass, heroName, hardcoreBgColor, heroColorDead, goToHero } =
+  useHero({
+    ...props.heroe,
+  });
 </script>
 
 <style scoped>
