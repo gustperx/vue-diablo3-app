@@ -12,7 +12,7 @@
       <div
         class="rounded-full p-0.5 text-center text-xs font-medium leading-none"
         :class="classHeroBg"
-        :style="{ width: heroTime.time }"
+        :style="{ width: `${heroTime.time * 100}%` }"
       ></div>
     </div>
   </div>

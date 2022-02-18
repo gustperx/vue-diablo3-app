@@ -1,14 +1,12 @@
 export type BlizzardRegions = string[];
-export type BlizzardLocales = {
-  us: string;
-  eu: string;
-  kr: string;
-  tw: string;
-};
+
+export interface BlizzardLocales<T> {
+  [id: string]: T;
+}
 
 const regions: BlizzardRegions = ["us", "eu", "kr", "tw"];
 
-const locales: BlizzardLocales = {
+const locales: BlizzardLocales<string> = {
   us: "en_US",
   eu: "en_GB",
   kr: "ko_KR",

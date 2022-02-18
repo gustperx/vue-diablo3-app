@@ -1,4 +1,5 @@
 import { defineStore } from "pinia";
+import { locales } from "@/helpers/regions";
 import { blizzardProfileApi } from "../api/diablo/search";
 import type { Artisans, ProfileAccount } from "../interfaces/profileAccount";
 import type {
@@ -44,7 +45,7 @@ const useProfileAccountStore = defineStore("profileAccount", {
 
         const apiClient = blizzardProfileApi(props.region);
         const resource = `/d3/profile/${props.battleTag}/`;
-        const locale = "en_US";
+        const locale = locales[props.region];
 
         const params = {
           access_token: oAuthStore.token,
