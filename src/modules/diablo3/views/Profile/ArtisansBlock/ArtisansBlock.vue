@@ -1,7 +1,7 @@
 <template>
   <div class="mx-4">
     <hr class="my-4 bg-gray-200" />
-    <h3 class="mb-4 font-diablo text-2xl">Artisans</h3>
+    <h3 class="font-diablo mb-4 text-2xl">Artisans</h3>
     <div class="flex flex-col md:flex-row">
       <div v-for="artisan in artisansInfo" :key="artisan.name">
         <ArtisansBlockItem :artisan="artisan" />
@@ -12,7 +12,7 @@
 
 <script lang="ts" setup>
 import ArtisansBlockItem from "./ArtisansBlockItem.vue";
-import type { Artisans, Artisan } from "../../../../interfaces/profileAccount";
+import type { Artisans, Artisan } from "../../../interfaces/profileAccount";
 import { ref } from "vue";
 
 const props = defineProps<{

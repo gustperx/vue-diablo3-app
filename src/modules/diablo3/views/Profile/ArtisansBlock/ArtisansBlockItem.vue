@@ -24,7 +24,7 @@
 </template>
 
 <script lang="ts" setup>
-import type { Artisan } from "@/modules/diablo3/interfaces/profileAccount";
+import type { Artisan } from "../../../interfaces/profileAccount";
 
 defineProps<{
   artisan: Artisan;

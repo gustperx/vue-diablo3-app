@@ -13,7 +13,7 @@
 <script lang="ts" setup>
 import TheLoader from "@/components/TheLoader.vue";
 import MainBlock from "./MainBlock/MainBlock.vue";
-import ArtisansBlock from "./MainBlock/ArtisansBlock/ArtisansBlock.vue";
+import ArtisansBlock from "./ArtisansBlock/ArtisansBlock.vue";
 import { useProfile } from "../../composables/useProfile";
 
 const props = defineProps<{
