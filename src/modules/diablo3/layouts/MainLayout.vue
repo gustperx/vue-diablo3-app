@@ -16,7 +16,7 @@ import { RouterView } from "vue-router";
 
 import TheLoader from "@/components/TheLoader.vue";
 
-import { useOauthStore } from "../stores/oauthStore";
+import { useOauthStore } from "../stores/oAuthStore";
 import DiabloHeader from "../components/DiabloHeader.vue";
 import DiabloFooter from "../components/DiabloFooter.vue";
 

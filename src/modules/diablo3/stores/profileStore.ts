@@ -1,7 +1,7 @@
 import { defineStore } from "pinia";
 import { locales } from "@/helpers/regions";
 import { blizzardProfileApi } from "../api/diablo/search";
-import { useOauthStore } from "./oauthStore";
+import { useOauthStore } from "./oAuthStore";
 import type { Artisans, ProfileAccount } from "../interfaces/ProfileAccount";
 import type {
   ProfileState,
@@ -12,7 +12,7 @@ import type { DetailedHeroItems } from "../interfaces/DetailedHeroItems";
 
 const oAuthStore = useOauthStore();
 
-const useProfileAccountStore = defineStore("profileAccount", {
+const useProfileStore = defineStore("profileStore", {
   state: (): ProfileState => {
     return {
       isLoading: false,
@@ -134,4 +134,4 @@ const useProfileAccountStore = defineStore("profileAccount", {
   },
 });
 
-export { useProfileAccountStore };
+export { useProfileStore };

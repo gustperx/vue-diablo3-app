@@ -5,7 +5,7 @@ import type { oAuthState } from "../interfaces/oAuthStore";
 const clientId: string = import.meta.env.VITE_DIABLO3_APP_CLIENT_ID;
 const clientSecret: string = import.meta.env.VITE_DIABLO3_APP_CLIENT_SECRET;
 
-const useOauthStore = defineStore("oauthStore", {
+const useOauthStore = defineStore("oAuthStore", {
   state: (): oAuthState => {
     return {
       isLoading: false,
