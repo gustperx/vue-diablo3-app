@@ -2,10 +2,10 @@ import { computed } from "vue";
 import { useRouter } from "vue-router";
 import { useErrorStore } from "../stores/errorStore";
 import { useProfileAccountStore } from "../stores/profileAccountStore";
-import type { userParamsProfileAccount } from "../interfaces/profileAccountStore";
-import type { errorGlobal } from "../interfaces/errorStore";
+import type { ProfileParameters } from "../interfaces/ProfileAccountStore";
+import type { ErrorGlobal } from "../interfaces/ErrorStore";
 
-const useProfile = (props: userParamsProfileAccount) => {
+const useProfile = (props: ProfileParameters) => {
   const router = useRouter();
   const errorStore = useErrorStore();
   const profileAccountStore = useProfileAccountStore();
@@ -13,7 +13,7 @@ const useProfile = (props: userParamsProfileAccount) => {
   // Get profile
   // SuperRambo-2613
   profileAccountStore.getProfile(props).catch((err) => {
-    const errObj: errorGlobal = {
+    const errObj: ErrorGlobal = {
       userParams: { battleTag: props.battleTag, region: props.region },
       message: err.message,
     };

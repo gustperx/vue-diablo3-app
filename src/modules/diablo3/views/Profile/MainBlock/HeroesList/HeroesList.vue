@@ -30,7 +30,7 @@
 </template>
 
 <script lang="ts" setup>
-import type { Hero } from "@/modules/diablo3/interfaces/profileAccount";
+import type { Hero } from "@/modules/diablo3/interfaces/ProfileAccount";
 import HeroesListIcono from "./HeroesListIcono.vue";
 import HeroesListClass from "./HeroesListClass.vue";
 

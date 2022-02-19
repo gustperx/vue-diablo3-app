@@ -19,7 +19,7 @@ import TopHeroes from "./TopHeroes/TopHeroes.vue";
 import HeroesList from "./HeroesList/HeroesList.vue";
 import ProgressList from "./ProgressList/ProgressList.vue";
 import PlayerStats from "./PlayerStats/PlayerStats.vue";
-import type { ProfileAccount } from "@/modules/diablo3/interfaces/profileAccount";
+import type { ProfileAccount } from "@/modules/diablo3/interfaces/ProfileAccount";
 
 const props = defineProps<{
   profile: ProfileAccount;

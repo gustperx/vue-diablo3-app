@@ -2,18 +2,18 @@ import { defineStore } from "pinia";
 import { locales } from "@/helpers/regions";
 import { blizzardProfileApi } from "../api/diablo/search";
 import { useOauthStore } from "./oauthStore";
-import type { Artisans, ProfileAccount } from "../interfaces/profileAccount";
+import type { Artisans, ProfileAccount } from "../interfaces/ProfileAccount";
 import type {
-  profileAccountState,
-  userParamsProfileAccount,
-} from "../interfaces/profileAccountStore";
+  ProfileState,
+  ProfileParameters,
+} from "../interfaces/ProfileAccountStore";
 import type { HeroDiablo } from "../interfaces/HeroDiablo";
 import type { DetailedHeroItems } from "../interfaces/DetailedHeroItems";
 
 const oAuthStore = useOauthStore();
 
 const useProfileAccountStore = defineStore("profileAccount", {
-  state: (): profileAccountState => {
+  state: (): ProfileState => {
     return {
       isLoading: false,
       profile: undefined,
@@ -37,7 +37,7 @@ const useProfileAccountStore = defineStore("profileAccount", {
     },
   },
   actions: {
-    async getProfile(props: userParamsProfileAccount) {
+    async getProfile(props: ProfileParameters) {
       try {
         if (this.profile) {
           const accountName = this.profile.battleTag.replace("#", "-");
@@ -69,7 +69,7 @@ const useProfileAccountStore = defineStore("profileAccount", {
         throw new Error(`${err}`);
       }
     },
-    async getHero(props: userParamsProfileAccount) {
+    async getHero(props: ProfileParameters) {
       try {
         if (this.hero) {
           if (this.hero.id === Number(props.heroId)) {
@@ -100,7 +100,7 @@ const useProfileAccountStore = defineStore("profileAccount", {
         throw new Error(`${error}`);
       }
     },
-    async getDetailedHeroItems(props: userParamsProfileAccount) {
+    async getDetailedHeroItems(props: ProfileParameters) {
       try {
         if (this.heroItems) {
           if (this.hero?.id === Number(props.heroId)) {

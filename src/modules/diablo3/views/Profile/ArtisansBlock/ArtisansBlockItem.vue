@@ -24,7 +24,7 @@
 </template>
 
 <script lang="ts" setup>
-import type { Artisan } from "../../../interfaces/profileAccount";
+import type { Artisan } from "../../../interfaces/ProfileAccount";
 
 defineProps<{
   artisan: Artisan;

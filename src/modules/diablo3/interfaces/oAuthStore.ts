@@ -1,4 +1,4 @@
-export interface oauthState {
+export interface oAuthState {
   isLoading: boolean;
   token: string | undefined;
 }

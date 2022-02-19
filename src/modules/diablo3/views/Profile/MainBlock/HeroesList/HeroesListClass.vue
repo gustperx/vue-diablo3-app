@@ -8,7 +8,7 @@
 
 <script lang="ts" setup>
 import { useHero } from "@/modules/diablo3/composables/useHero";
-import type { Hero } from "@/modules/diablo3/interfaces/profileAccount";
+import type { Hero } from "@/modules/diablo3/interfaces/ProfileAccount";
 
 const props = defineProps<{
   heroe: Hero;

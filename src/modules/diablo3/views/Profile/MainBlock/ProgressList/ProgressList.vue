@@ -14,7 +14,7 @@
 <script lang="ts" setup>
 import { reactive } from "vue";
 import ProgressListItem from "./ProgressListItem.vue";
-import type { Progression } from "@/modules/diablo3/interfaces/profileAccount";
+import type { Progression } from "@/modules/diablo3/interfaces/ProfileAccount";
 
 const props = defineProps<{
   acts: Progression;

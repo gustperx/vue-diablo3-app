@@ -10,7 +10,7 @@
 <script lang="ts" setup>
 import TimePlayedHero from "./TimePlayedHero.vue";
 import { useTimePlayed } from "@/modules/diablo3/composables/useTimePlayed";
-import type { TimePlayed } from "@/modules/diablo3/interfaces/profileAccount";
+import type { TimePlayed } from "@/modules/diablo3/interfaces/ProfileAccount";
 
 const props = defineProps<{
   timePlayed: TimePlayed;

@@ -29,7 +29,7 @@ import SingleStat from "./SingleStat.vue";
 import type {
   ProfileAccountKills,
   TimePlayed as TimePlayedInterface,
-} from "@/modules/diablo3/interfaces/profileAccount";
+} from "@/modules/diablo3/interfaces/ProfileAccount";
 
 defineProps<{
   stats: {

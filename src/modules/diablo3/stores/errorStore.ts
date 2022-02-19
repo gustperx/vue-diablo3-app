@@ -1,10 +1,10 @@
 import { defineStore } from "pinia";
-import type { errorState } from "../interfaces/errorStore";
+import type { ErrorState } from "../interfaces/ErrorStore";
 
 const useErrorStore = defineStore("errorStore", {
-  state: (): errorState => {
+  state: (): ErrorState => {
     return {
-      error: null,
+      error: undefined,
     };
   },
 });

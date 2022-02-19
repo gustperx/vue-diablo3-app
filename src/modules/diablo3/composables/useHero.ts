@@ -1,7 +1,7 @@
 import { computed } from "vue";
 import { useRoute, useRouter } from "vue-router";
 import { textToCapitalize } from "@/helpers/basics";
-import type { Hero } from "../interfaces/profileAccount";
+import type { Hero } from "../interfaces/ProfileAccount";
 
 const useHero = (heroe: Hero) => {
   const route = useRoute();

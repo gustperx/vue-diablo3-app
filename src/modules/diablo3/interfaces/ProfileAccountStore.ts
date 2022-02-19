@@ -1,15 +1,15 @@
 import type { DetailedHeroItems } from "./DetailedHeroItems";
 import type { HeroDiablo } from "./HeroDiablo";
-import type { ProfileAccount } from "./profileAccount";
+import type { ProfileAccount } from "./ProfileAccount";
 
-export interface profileAccountState {
+export interface ProfileState {
   isLoading: boolean;
   profile?: ProfileAccount;
   hero?: HeroDiablo;
   heroItems?: DetailedHeroItems;
 }
 
-export interface userParamsProfileAccount {
+export interface ProfileParameters {
   battleTag: string;
   region: string;
   heroId?: string;

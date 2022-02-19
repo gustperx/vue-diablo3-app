@@ -1,7 +1,7 @@
 import { computed } from "vue";
 import { textToCapitalize } from "@/helpers/basics";
 import { HeroData } from "../classes/HeroData";
-import type { TimePlayed } from "../interfaces/profileAccount";
+import type { TimePlayed } from "../interfaces/ProfileAccount";
 
 const useTimePlayed = (timePlayed: TimePlayed) => {
   const timeProcess = (): HeroData[] => {

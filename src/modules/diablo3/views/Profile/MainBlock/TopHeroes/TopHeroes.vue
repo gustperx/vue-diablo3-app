@@ -10,7 +10,7 @@
 </template>
 
 <script lang="ts" setup>
-import type { Hero } from "@/modules/diablo3/interfaces/profileAccount";
+import type { Hero } from "@/modules/diablo3/interfaces/ProfileAccount";
 import TopHeroesItem from "./TopHeroesItem.vue";
 
 defineProps<{
