@@ -2,7 +2,7 @@
   <div class="mb-3 flex items-center">
     <div class="mr-2">
       <span class="slot" :class="slotClass" />
-      <img :src="skillUrl" :alt="skill.name" class="-mt-6" />
+      <img :src="mediaSkill(skill.icon)" :alt="skill.name" class="-mt-6" />
     </div>
 
     <div>
@@ -22,6 +22,7 @@
 
 <script lang="ts" setup>
 import { computed } from "vue";
+import { useMedia } from "@/modules/diablo3/composables/useMedia";
 import type { Rune, Skill } from "@/modules/diablo3/interfaces/HeroDiablo";
 
 const props = defineProps<{
@@ -30,12 +31,7 @@ const props = defineProps<{
   slotNum: string | number;
 }>();
 
-const skillUrl = computed(() => {
-  const sizes = [21, 42, 64];
-  const host = `http://media.blizzard.com/d3/icons/skills/${sizes[1]}/`;
-  return `${host}${props.skill.icon}.png`;
-});
-
+const { mediaSkill } = useMedia();
 const slotClass = computed(() => `slot-${props.slotNum}`);
 </script>
 

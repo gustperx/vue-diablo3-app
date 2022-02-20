@@ -87,16 +87,13 @@ const useProfileStore = defineStore("profileStore", {
           locale,
         };
 
-        this.isLoading = true;
         const { data } = await apiClient.get<HeroDiablo>(resource, {
           params,
         });
 
         this.hero = data;
-        this.isLoading = false;
         console.warn("hero from Api");
       } catch (error) {
-        this.isLoading = false;
         throw new Error(`${error}`);
       }
     },
@@ -118,16 +115,13 @@ const useProfileStore = defineStore("profileStore", {
           locale,
         };
 
-        this.isLoading = true;
         const { data } = await apiClient.get<HeroItems>(resource, {
           params,
         });
 
         this.heroItems = data;
-        this.isLoading = false;
         console.warn("hero items from Api");
       } catch (error) {
-        this.isLoading = false;
         throw new Error(`${error}`);
       }
     },

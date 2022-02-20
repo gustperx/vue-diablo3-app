@@ -148,3 +148,7 @@ export interface HeroAttribute {
 export interface HeroResourse<T> {
   [id: string]: T;
 }
+
+export interface HeroAttributes {
+  [key: string]: number;
+}

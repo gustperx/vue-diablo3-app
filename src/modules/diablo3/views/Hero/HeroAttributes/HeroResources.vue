@@ -16,17 +16,17 @@
 
     <div class="resource">
       <div class="flex items-center justify-start py-2.5">
-        <div class="resource-icon" :class="classResourceName" />
+        <div class="resource-icon" :class="classResourceName(classSlug)" />
         <div
           class="name-text ml-3 uppercase"
           :class="'resource-name-' + classSlug"
         >
-          <span>{{ displayResourceName }}</span>
+          <span>{{ displayResourceName(classSlug) }}</span>
         </div>
         <div class="ml-3">
           <span class="font-mono">
             {{ resources.primaryResource.value }}
-            <template v-if="hasSecondaryResource">
+            <template v-if="hasSecondaryResource(classSlug)">
               <span class="mx-0 text-gray-400">/</span>
               <span> {{ resources.secondaryResource.value }} </span>
             </template>
@@ -38,64 +38,19 @@
 </template>
 
 <script lang="ts" setup>
-import { computed } from "vue";
+import { useAttribute } from "@/modules/diablo3/composables/useAttribute";
 import type {
   HeroAttribute,
   HeroResourse,
 } from "@/modules/diablo3/interfaces/HeroDiablo";
 
-const names = {
-  BARBARIAN: "barbarian",
-  CRUSADER: "crusader",
-  MONK: "monk",
-  WIZARD: "wizard",
-  WITCHDOCTOR: "witch-doctor",
-  NECROMANCER: "necromancer",
-  DEMONHUNTER: "demon-hunter",
-};
-
-const resourceClassNameObj = {
-  [names.BARBARIAN]: "fury",
-  [names.CRUSADER]: "wrath",
-  [names.MONK]: "spirit",
-  [names.WIZARD]: "arcane-power",
-  [names.WITCHDOCTOR]: "mana",
-  [names.NECROMANCER]: "essence",
-  [names.DEMONHUNTER]: "hatred-discipline",
-};
-
-const resourceDisplayNameObj = {
-  [names.BARBARIAN]: "Fury",
-  [names.CRUSADER]: "Wrath",
-  [names.MONK]: "Spirit",
-  [names.WIZARD]: "Arcane Power",
-  [names.WITCHDOCTOR]: "Mana",
-  [names.NECROMANCER]: "Essence",
-  [names.DEMONHUNTER]: "Hatred / Discipline",
-};
-
-const props = defineProps<{
+defineProps<{
   resources: HeroResourse<HeroAttribute>;
   classSlug: string;
 }>();
 
-const resourceClassName = (classSlug: string): string => {
-  return resourceClassNameObj[classSlug];
-};
-
-const resourceDisplayName = (classSlug: string): string => {
-  return resourceDisplayNameObj[classSlug];
-};
-
-const classResourceName = computed(
-  () => `resource-${resourceClassName(props.classSlug)}`
-);
-
-const displayResourceName = computed(() =>
-  resourceDisplayName(props.classSlug)
-);
-
-const hasSecondaryResource = computed(() => props.classSlug === "demon-hunter");
+const { classResourceName, displayResourceName, hasSecondaryResource } =
+  useAttribute();
 </script>
 
 <style scoped>

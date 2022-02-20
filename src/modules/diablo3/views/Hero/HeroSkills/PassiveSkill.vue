@@ -1,7 +1,7 @@
 <template>
   <div class="mb-3 flex items-center">
     <div class="mr-2">
-      <img :src="skillUrl" :alt="skill.name" />
+      <img :src="mediaSkill(skill.icon)" :alt="skill.name" />
     </div>
 
     <div>
@@ -13,20 +13,12 @@
 </template>
 
 <script lang="ts" setup>
+import { useMedia } from "@/modules/diablo3/composables/useMedia";
 import type { Skill } from "@/modules/diablo3/interfaces/HeroDiablo";
-import { computed } from "vue";
 
-const props = defineProps<{
+defineProps<{
   skill: Skill;
 }>();
 
-const skillUrl = computed(() => {
-  const sizes = {
-    21: 21,
-    42: 42,
-    64: 64,
-  };
-  const host = `http://media.blizzard.com/d3/icons/skills/${sizes[42]}/`;
-  return `${host}${props.skill.icon}.png`;
-});
+const { mediaSkill } = useMedia();
 </script>

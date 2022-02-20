@@ -1,5 +1,5 @@
 <template>
-  <h3 class="my-4 font-diablo text-2xl">Hero List</h3>
+  <h3 class="font-diablo my-4 text-2xl">Hero List</h3>
 
   <table class="w-full table-auto border-collapse text-sm md:table-fixed">
     <thead>

@@ -41,56 +41,22 @@
 </template>
 
 <script lang="ts" setup>
-import { computed } from "vue";
 import ItemDetailGem from "./ItemDetailGem.vue";
+import { useItem } from "@/modules/diablo3/composables/useItem";
 import type { DetailedHeroItems } from "@/modules/diablo3/interfaces/DetailedHeroItems";
 
 const props = defineProps<{
   item: DetailedHeroItems;
 }>();
 
-const itemUrl = computed(() => {
-  const host = "http://media.blizzard.com/d3/icons/items/large/";
-  return `${host}${props.item.icon}.png`;
-});
-
-const slotName = computed(() => {
-  const slotName = props.item.slots.split(/(?=[A-Z])/).join(" ");
-  return slotName[0].toUpperCase() + slotName.slice(1);
-});
-
-const itemClassColor = computed(() => {
-  if (Object.prototype.hasOwnProperty.call(props.item, "displayColor")) {
-    return `item-${props.item.displayColor}`;
-  }
-  return "item-none";
-});
-
-const attributes = computed(() => {
-  let attributesText = "";
-  if (props.item.attributes) {
-    attributesText += "Primary Attributes:\n";
-    props.item.attributes.primary?.map((attribute) => {
-      attributesText += `${attribute}\n`;
-    });
-    attributesText += "\nSecondary Attributes:\n";
-    props.item.attributes.secondary?.map((attribute) => {
-      attributesText += `${attribute}\n`;
-    });
-  }
-  return attributesText;
-});
-
-const itemHasGems = computed(() =>
-  Object.prototype.hasOwnProperty.call(props.item, "gems")
-);
-
-const gemOrJewel = computed(() => {
-  if (props.item.gems) {
-    return props.item.gems[0].isGem ? "Gems" : "Jewel";
-  }
-  return undefined;
-});
+const {
+  itemClassColor,
+  itemUrl,
+  slotName,
+  attributes,
+  itemHasGems,
+  gemOrJewel,
+} = useItem({ ...props.item });
 </script>
 
 <style scoped>
