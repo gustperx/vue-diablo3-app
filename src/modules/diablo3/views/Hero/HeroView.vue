@@ -14,7 +14,7 @@
           <HeroAttributes :stats="hero.stats" :classSlug="hero.class" />
           <HeroSkills :skills="hero.skills" />
         </div>
-        <div class="mx-2 mb-2 basis-8/12">
+        <div class="mx-6 mb-2 basis-8/12">
           <HeroItems :items="heroItems" />
         </div>
       </div>

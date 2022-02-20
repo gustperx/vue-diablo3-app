@@ -8,7 +8,7 @@ import type {
   ProfileParameters,
 } from "../interfaces/ProfileAccountStore";
 import type { HeroDiablo } from "../interfaces/HeroDiablo";
-import type { DetailedHeroItems } from "../interfaces/DetailedHeroItems";
+import type { HeroItems } from "../interfaces/DetailedHeroItems";
 
 const oAuthStore = useOauthStore();
 
@@ -119,7 +119,7 @@ const useProfileStore = defineStore("profileStore", {
         };
 
         this.isLoading = true;
-        const { data } = await apiClient.get<DetailedHeroItems>(resource, {
+        const { data } = await apiClient.get<HeroItems>(resource, {
           params,
         });
 

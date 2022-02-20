@@ -8,6 +8,7 @@ export interface DetailedHeroItems {
   itemLevel: number;
   stackSizeMax: number;
   accountBound: boolean;
+  flavorText: string;
   typeName: string;
   type: Type;
   armor: number;
@@ -20,13 +21,12 @@ export interface DetailedHeroItems {
   openSockets: number;
   seasonRequiredToDrop: number;
   isSeasonRequiredToDrop: boolean;
-  dye?: Dye;
+  set?: Set;
   craftedBy?: CraftedBy;
+  gems?: Gem[];
   damage?: string;
   dps?: string;
-  flavorText?: string;
   elementalType?: string;
-  blockChance?: string;
 }
 
 export interface Attributes {
@@ -62,18 +62,32 @@ export interface Item {
 }
 
 export enum DisplayColor {
+  Green = "green",
   Orange = "orange",
   Yellow = "yellow",
 }
 
-export interface Dye {
-  id: string;
+export interface Gem {
+  item: Item;
+  attributes: string[];
+  isGem: boolean;
+  isJewel: boolean;
+  jewelRank?: number;
+  jewelSecondaryUnlockRank?: number;
+}
+
+export interface Set {
   name: string;
-  icon: string;
-  tooltipParams: string;
+  slug: string;
+  description: string;
+  descriptionHtml: string;
 }
 
 export interface Type {
   twoHanded: boolean;
   id: string;
+}
+
+export interface HeroItems {
+  [key: string]: DetailedHeroItems;
 }
