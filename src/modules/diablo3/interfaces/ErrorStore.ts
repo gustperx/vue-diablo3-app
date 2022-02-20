@@ -1,10 +1,10 @@
-import type { ParamsProfileAccount } from "./ProfileAccountStore";
+import type { ProfileParameters } from "./ProfileAccountStore";
 
 export interface ErrorState {
   error?: ErrorGlobal;
 }
 
 export interface ErrorGlobal {
-  userParams: ParamsProfileAccount;
+  userParams: ProfileParameters;
   message: string;
 }

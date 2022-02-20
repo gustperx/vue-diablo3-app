@@ -1,18 +1,19 @@
-import { computed } from "vue";
 import { useRouter } from "vue-router";
 import { useErrorStore } from "../stores/errorStore";
 import { useProfileStore } from "../stores/profileStore";
 import type { ProfileParameters } from "../interfaces/ProfileAccountStore";
 import type { ErrorGlobal } from "../interfaces/ErrorStore";
+import { computed } from "vue";
 
-const useProfile = (props: ProfileParameters) => {
+const useHeroProfile = (props: ProfileParameters) => {
   const router = useRouter();
-  const errorStore = useErrorStore();
   const profileStore = useProfileStore();
+  const errorStore = useErrorStore();
 
-  // Get profile
-  // SuperRambo-2613
-  profileStore.getProfile(props).catch((err) => {
+  Promise.all([
+    profileStore.getHero(props),
+    profileStore.getDetailedHeroItems(props),
+  ]).catch((err) => {
     const errObj: ErrorGlobal = {
       userParams: { battleTag: props.battleTag, region: props.region },
       message: err.message,
@@ -23,11 +24,9 @@ const useProfile = (props: ProfileParameters) => {
 
   return {
     isLoading: computed(() => profileStore.isLoading),
-    profile: computed(() => profileStore.profile),
-
-    // getter
-    artisans: computed(() => profileStore.artisansData),
+    hero: computed(() => profileStore.hero),
+    heroItems: computed(() => profileStore.heroItems),
   };
 };
 
-export { useProfile };
+export { useHeroProfile };

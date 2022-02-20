@@ -37,7 +37,7 @@ const useProfileStore = defineStore("profileStore", {
     },
   },
   actions: {
-    async getProfile(props: ProfileParameters) {
+    async getProfile(props: ProfileParameters): Promise<void> {
       try {
         if (this.profile) {
           const accountName = this.profile.battleTag.replace("#", "-");
@@ -69,7 +69,7 @@ const useProfileStore = defineStore("profileStore", {
         throw new Error(`${err}`);
       }
     },
-    async getHero(props: ProfileParameters) {
+    async getHero(props: ProfileParameters): Promise<void> {
       try {
         if (this.hero) {
           if (this.hero.id === Number(props.heroId)) {
@@ -100,7 +100,7 @@ const useProfileStore = defineStore("profileStore", {
         throw new Error(`${error}`);
       }
     },
-    async getDetailedHeroItems(props: ProfileParameters) {
+    async getDetailedHeroItems(props: ProfileParameters): Promise<void> {
       try {
         if (this.heroItems) {
           if (this.hero?.id === Number(props.heroId)) {

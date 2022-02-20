@@ -139,3 +139,12 @@ export interface Rune {
 export interface Passive {
   skill: Skill;
 }
+
+export interface HeroAttribute {
+  name: string;
+  value: number;
+}
+
+export interface HeroResourse<T> {
+  [id: string]: T;
+}
