@@ -1,8 +1,8 @@
 <template>
   <div class="mb-3 flex items-center">
     <div class="mr-2">
-      <!-- <span class="slot" :class="slotClass" /> -->
-      <img :src="skillUrl" :alt="skill.name" />
+      <span class="slot" :class="slotClass" />
+      <img :src="skillUrl" :alt="skill.name" class="-mt-6" />
     </div>
 
     <div>
@@ -21,8 +21,8 @@
 </template>
 
 <script lang="ts" setup>
-import type { Rune, Skill } from "@/modules/diablo3/interfaces/HeroDiablo";
 import { computed } from "vue";
+import type { Rune, Skill } from "@/modules/diablo3/interfaces/HeroDiablo";
 
 const props = defineProps<{
   skill: Skill;
@@ -36,36 +36,36 @@ const skillUrl = computed(() => {
   return `${host}${props.skill.icon}.png`;
 });
 
-/* const slotClass = computed(() => `slot-${props.slotNum}`); */
+const slotClass = computed(() => `slot-${props.slotNum}`);
 </script>
 
 <style scoped>
-/* .active-skills .skills .slot {
+.active-skills .skills .slot {
   display: block;
   width: 22px;
   height: 22px;
   background: url("https://res.cloudinary.com/dpfdgvz5b/image/upload/v1644710868/diablo3/igb6nodrrzvygwpbrfml.png")
     0 0;
-  position: absolute;
-  top: -5px;
-  left: 5px;
+  position: relative;
+  top: -10px;
+  left: -10px;
 }
-.active-skills .skills .slot .slot-1 {
+.active-skills .skills .slot.slot-1 {
   background-position: 0 -1px;
 }
-.active-skills .skills .slot .slot-2 {
+.active-skills .skills .slot.slot-2 {
   background-position: -21px -1px;
 }
-.active-skills .skills .slot .slot-3 {
+.active-skills .skills .slot.slot-3 {
   background-position: 0 -23px;
 }
-.active-skills .skills .slot .slot-4 {
+.active-skills .skills .slot.slot-4 {
   background-position: -23px -23px;
 }
-.active-skills .skills .slot .slot-5 {
+.active-skills .skills .slot.slot-5 {
   background-position: 0 -46px;
 }
-.active-skills .skills .slot .slot-6 {
+.active-skills .skills .slot.slot-6 {
   background-position: -23px -46px;
-} */
+}
 </style>

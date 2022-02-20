@@ -3,26 +3,44 @@
     <h2 class="font-diablo text-2xl">Skills</h2>
     <hr class="bg-white" />
 
-    <!-- <b-nav pills small>
-      <b-nav-item :active="!isPassiveSkillsActive" @click="changeComponent('ActiveSkills')">Active</b-nav-item>
-      <b-nav-item :active="isPassiveSkillsActive" @click="changeComponent('PassiveSkills')">Passive</b-nav-item>
-    </b-nav>
+    <button
+      class="mr-2 mt-4 w-20 rounded-md bg-gray-700 py-1 text-sm font-medium"
+      :class="{ 'bg-orange-800': activeComponent }"
+      :active="activeComponent"
+      @click="changeComponent"
+    >
+      Active
+    </button>
+    <button
+      class="mt-4 w-20 rounded-md bg-gray-700 py-1 text-sm font-medium"
+      :class="{ 'bg-orange-800': !activeComponent }"
+      :active="!activeComponent"
+      @click="changeComponent"
+    >
+      Passive
+    </button>
 
     <keep-alive>
-      <component :is="activeComponent" :skills="componentProps"/>
-    </keep-alive> -->
-
-    <ActiveSkills :skills="skills.active" />
-    <PassiveSkills :skills="skills.passive" />
+      <ActiveSkills :skills="skills.active" v-if="activeComponent" />
+      <PassiveSkills :skills="skills.passive" v-else />
+    </keep-alive>
   </div>
 </template>
 
 <script lang="ts" setup>
-import ActiveSkills from "./ActiveSkills.vue";
-import PassiveSkills from "./PassiveSkills.vue";
+import { defineAsyncComponent, ref } from "vue";
 import type { Skills } from "@/modules/diablo3/interfaces/HeroDiablo";
+
+const ActiveSkills = defineAsyncComponent(() => import("./ActiveSkills.vue"));
+const PassiveSkills = defineAsyncComponent(() => import("./PassiveSkills.vue"));
 
 defineProps<{
   skills: Skills;
 }>();
+
+const activeComponent = ref(true);
+
+const changeComponent = () => {
+  activeComponent.value = !activeComponent.value;
+};
 </script>
