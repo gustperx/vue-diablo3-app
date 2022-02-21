@@ -15,21 +15,39 @@
             <span class="text-md font-semibold text-orange-700">{{ val }}</span>
           </li>
         </ul>
+      </div>
 
-        <div class="mb-40"></div>
+      <div class="mt-8">
+        <RouterLink
+          :to="{ name: 'diablo3-home' }"
+          class="rounded-md bg-gray-700 px-4 py-2 font-semibold text-white"
+          >Back</RouterLink
+        >
       </div>
     </div>
 
     <!-- Si NO hay error -->
     <div v-else>
-      <h1 class="my-5">Error Page</h1>
-      <p class="lead">What are you doing here? 🤔</p>
+      <div class="text-center">
+        <h1 class="my-5 text-2xl text-red-600">Error Page</h1>
+        <p class="my-4 text-lg font-semibold text-gray-400">
+          What are you doing here? 🤔
+        </p>
+        <RouterLink
+          :to="{ name: 'home' }"
+          class="rounded-md bg-gray-700 px-4 py-2 font-semibold text-white"
+          >Home</RouterLink
+        >
+      </div>
     </div>
+
+    <div class="mb-40"></div>
   </div>
 </template>
 
 <script lang="ts" setup>
 import { computed } from "vue";
+import { RouterLink } from "vue-router";
 import { useErrorStore } from "../../stores/errorStore";
 
 const errorStore = useErrorStore();

@@ -13,7 +13,7 @@ const routes: RouteRecordRaw[] = [
   {
     path: "/about",
     name: "about",
-    component: () => import("@/views/AboutView.vue"),
+    component: () => import("@/modules/diablo3/views/About/AboutView.vue"),
   },
 
   // Router Diablo 3
@@ -22,7 +22,7 @@ const routes: RouteRecordRaw[] = [
   {
     path: "/:pathMatch(.*)*",
     name: "NotFound",
-    component: () => import("@/views/AboutView.vue"),
+    component: () => import("@/modules/diablo3/views/Error/ErrorView.vue"),
   },
 ];
 
