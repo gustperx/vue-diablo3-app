@@ -12,7 +12,7 @@
 
   <div
     v-if="isLoading"
-    class="flex h-96 w-full flex-col items-center justify-start"
+    class="flex h-screen w-full flex-col items-center justify-start"
   >
     <div v-if="message" class="mt-12 text-center">
       <h3 class="text-2xl">{{ message }}</h3>

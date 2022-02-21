@@ -9,10 +9,10 @@
 
     <!-- Bloque Contenido -->
     <div>
-      <h5 class="font-medium capitalize">{{ artisan.name }}</h5>
+      <h5 class="font-medium capitalize text-gray-400">{{ artisan.name }}</h5>
 
       <!-- Si hay artesano normal -->
-      <p v-if="artisan.normal?.level" class="m-0 font-normal">
+      <p v-if="artisan.normal?.level" class="m-0 font-normal text-gray-400">
         Level {{ artisan.normal.level }} (normal)
       </p>
 

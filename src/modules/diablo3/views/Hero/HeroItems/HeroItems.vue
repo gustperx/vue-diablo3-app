@@ -1,6 +1,6 @@
 <template>
   <section class="hero-items mb-5">
-    <h2 class="font-diablo mb-2 text-2xl">Items</h2>
+    <h2 class="mb-2 font-diablo text-2xl text-bone">Items</h2>
 
     <hr class="bg-white" />
 

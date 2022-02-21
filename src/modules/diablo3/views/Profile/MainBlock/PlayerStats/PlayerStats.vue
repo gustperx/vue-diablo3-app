@@ -1,5 +1,5 @@
 <template>
-  <h2 class="font-diablo my-4 text-2xl">Stats</h2>
+  <h2 class="my-4 font-diablo text-2xl text-bone">Stats</h2>
   <div class="stats flex flex-col bg-gray-800 p-3">
     <SingleStat
       ico-name="fa-solid fa-skull"

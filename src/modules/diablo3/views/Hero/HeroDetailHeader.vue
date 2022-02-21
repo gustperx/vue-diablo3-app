@@ -4,10 +4,10 @@
       <div class="hero-detail-avatar" :class="heroClass"></div>
     </div>
     <div class="text-center">
-      <h1 class="text-bone my-4 font-diablo text-3xl">{{ hero.name }}</h1>
+      <h1 class="my-4 font-diablo text-3xl text-bone">{{ hero.name }}</h1>
     </div>
     <div class="flex flex-col items-center justify-center">
-      <div class="text-md mb-1 font-mono font-medium">
+      <div class="text-md mb-1 font-mono font-bold text-bone">
         <span>{{ hero.level }}</span>
 
         <span class="text-blue-400" v-if="hero.paragonLevel">
@@ -48,8 +48,5 @@ const heroClass = computed(() => `hero-${props.hero.class} ${gender.value}`);
   width: 138px;
   height: 105px;
   background-size: 280px;
-}
-.text-bone {
-  color: #e8dcc2;
 }
 </style>

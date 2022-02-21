@@ -3,7 +3,9 @@
     <div class="mx-3">
       <form action="" @submit.prevent="onSubmit">
         <div class="mb-4">
-          <label for="email" class="mb-2 block text-sm font-medium"
+          <label
+            for="email"
+            class="mb-2 block text-sm font-medium text-gray-400"
             >BattleTag:</label
           >
           <input
@@ -15,7 +17,9 @@
           />
         </div>
         <div class="mb-4">
-          <label for="password" class="mb-2 block text-sm font-medium"
+          <label
+            for="password"
+            class="mb-2 block text-sm font-medium text-gray-400"
             >Region:</label
           >
           <select
@@ -34,8 +38,10 @@
         </div>
         <div class="flex justify-end">
           <button
+            :disabled="btnLock"
             type="submit"
-            class="rounded-lg bg-zinc-700 px-5 py-2.5 text-center text-sm font-medium text-white hover:bg-zinc-800 focus:ring-4 focus:ring-blue-300"
+            class="rounded-lg bg-gray-700 px-5 py-2.5 text-center text-sm font-medium text-white hover:bg-gray-600"
+            :class="{ 'bg-blue-100 text-black hover:bg-blue-100': btnLock }"
           >
             Submit
           </button>
@@ -46,7 +52,7 @@
 </template>
 
 <script lang="ts" setup>
-import { computed, reactive } from "vue";
+import { computed, reactive, ref } from "vue";
 import { useRouter } from "vue-router";
 import { regions } from "@/helpers/regions";
 
@@ -57,11 +63,14 @@ const form = reactive<{ battleTag: string; region: string }>({
   region: "us",
 });
 
+const btnLock = ref(false);
+
 const regionList = computed(() =>
   regions.map((region) => ({ value: region, text: region.toUpperCase() }))
 );
 
 const onSubmit = () => {
+  btnLock.value = true;
   router.push({
     name: "diablo3-profile",
     params: {

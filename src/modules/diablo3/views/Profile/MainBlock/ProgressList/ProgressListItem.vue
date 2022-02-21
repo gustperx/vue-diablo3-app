@@ -3,7 +3,7 @@
     <div class="boss-img py-2 px-8">
       <div class="act" :class="actClass"></div>
     </div>
-    <p class="mb-3 block text-center text-sm font-bold">
+    <p class="mb-3 block text-center text-sm font-bold text-gray-400">
       {{ fullActName }}
     </p>
   </div>

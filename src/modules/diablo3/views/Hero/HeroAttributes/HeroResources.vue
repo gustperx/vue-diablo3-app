@@ -3,7 +3,7 @@
     <div class="resource py-2.5">
       <div class="flex items-center justify-start">
         <div class="resource-icon resource-life" />
-        <div class="name-text ml-3 uppercase">
+        <div class="ml-3 uppercase text-amber-500">
           <span>{{ resources.life.name }}</span>
         </div>
         <div class="ml-3">
@@ -12,13 +12,11 @@
       </div>
     </div>
 
-    <hr />
-
     <div class="resource">
       <div class="flex items-center justify-start py-2.5">
         <div class="resource-icon" :class="classResourceName(classSlug)" />
         <div
-          class="name-text ml-3 uppercase"
+          class="ml-3 uppercase text-amber-500"
           :class="'resource-name-' + classSlug"
         >
           <span>{{ displayResourceName(classSlug) }}</span>
@@ -81,9 +79,6 @@ const { classResourceName, displayResourceName, hasSecondaryResource } =
   background-position: -50px -100px;
 }
 
-.resource .name-text {
-  color: #efb45d;
-}
 .resource .resource-name-demon-hunter {
   width: auto;
 }

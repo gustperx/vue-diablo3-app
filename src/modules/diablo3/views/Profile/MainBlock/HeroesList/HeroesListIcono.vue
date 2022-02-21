@@ -1,7 +1,10 @@
 <template>
   <div class="hero-ico flex cursor-pointer items-center" @click="goToHero">
     <span class="hero-image border" :class="heroClassImg" />
-    <span class="hero-name ml-2 font-bold" :class="hardcoreBgColor">
+    <span
+      class="hero-name ml-2 font-bold text-gray-400"
+      :class="hardcoreBgColor"
+    >
       {{ heroName }}
     </span>
     <img

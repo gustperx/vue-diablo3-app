@@ -1,6 +1,6 @@
 <template>
   <div class="h-attriubutes">
-    <h2 class="font-diablo mb-2 text-2xl">Attributes</h2>
+    <h2 class="mb-2 font-diablo text-2xl text-bone">Attributes</h2>
 
     <hr class="bg-white" />
 
@@ -9,14 +9,10 @@
         <HeroAttributesList :attributes="coreAttributes(stats)" />
       </div>
 
-      <hr />
-
       <div class="secondary">
         <HeroAttributesList :attributes="secondaryAttributes(stats)" />
       </div>
     </div>
-
-    <hr />
 
     <div class="resources">
       <HeroResources :resources="resources(stats)" :classSlug="classSlug" />

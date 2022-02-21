@@ -10,7 +10,7 @@
       <!-- Nombre héroe -->
       <!-- Si es hardcore, pintamos el fondo rojo -->
       <div
-        class="flex items-center justify-around font-diablo font-bold"
+        class="flex items-center justify-around font-diablo font-bold text-bone"
         :class="hardcoreBgColor"
       >
         {{ heroName }}
@@ -22,7 +22,7 @@
         />
       </div>
       <hr class="my-2" />
-      <div class="mt-2 flex items-center justify-between">
+      <div class="mt-2 flex items-center justify-between text-gray-300">
         <small class="elite-kills">
           <!-- Jefes (Élites) asesinados -->
           <span class="text-mono">{{ heroe.kills.elites }}</span>

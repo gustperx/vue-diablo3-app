@@ -1,7 +1,9 @@
 <template>
   <div class="progress-time-played">
     <div class="flex justify-between">
-      <h5 class="mb-1 text-sm font-medium">{{ heroTime.hero }}</h5>
+      <h5 class="mb-1 text-sm font-medium text-gray-400">
+        {{ heroTime.hero }}
+      </h5>
       <span>
         <span class="bg-gray-200 px-2 text-sm font-medium text-gray-700">{{
           (heroTime.time * 100).toFixed(2)

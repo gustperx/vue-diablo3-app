@@ -5,6 +5,9 @@ module.exports = {
       fontFamily: {
         diablo: ["DiabloHeavy", "sans-serif"],
       },
+      colors: {
+        bone: "#e8dcc2",
+      },
     },
   },
   plugins: [require("@tailwindcss/forms")],

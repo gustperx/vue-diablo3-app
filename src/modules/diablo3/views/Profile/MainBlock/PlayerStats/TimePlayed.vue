@@ -1,5 +1,5 @@
 <template>
-  <h2 class="font-diablo my-4 text-2xl">Time Played</h2>
+  <h2 class="my-4 font-diablo text-2xl text-bone">Time Played</h2>
   <div class="bg-gray-800 p-4">
     <div v-for="hero in timeProcess" :key="hero.classSlug">
       <TimePlayedHero :heroTime="hero" />

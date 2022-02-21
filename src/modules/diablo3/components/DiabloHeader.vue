@@ -11,10 +11,10 @@
               class="h-8 w-8"
               alt="D3"
             />
-            <span class="ml-2 font-diablo">D3PF</span>
+            <span class="ml-2 font-diablo text-bone">D3PF</span>
           </div>
           <div class="hidden md:block">
-            <span class="mr-2 font-diablo">54</span>
+            <span class="mr-2 font-diablo text-bone">25</span>
           </div>
         </div>
       </div>

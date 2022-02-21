@@ -1,9 +1,9 @@
 <template>
   <div class="text-center">
-    <h1 class="my-5 font-diablo text-xl md:text-4xl">
+    <h1 class="my-5 font-diablo text-xl text-bone md:text-4xl">
       Diablo 3 Profile Finder
     </h1>
-    <p class="mx-2 md:mx-0">
+    <p class="mx-2 text-gray-500 md:mx-0">
       Enter your
       <em>
         <a

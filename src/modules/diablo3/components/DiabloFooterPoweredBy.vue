@@ -1,6 +1,6 @@
 <template>
   <div class="text-center">
-    <p class="text-lg font-medium">Powered by</p>
+    <p class="text-lg font-medium text-gray-500">Powered by</p>
 
     <div class="mt-2 flex">
       <div>
