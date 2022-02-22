@@ -21,7 +21,7 @@
         <RouterLink
           :to="{ name: 'diablo3-home' }"
           class="rounded-md bg-gray-700 px-4 py-2 font-semibold text-white"
-          >Back</RouterLink
+          >Home</RouterLink
         >
       </div>
     </div>
@@ -34,7 +34,7 @@
           What are you doing here? 🤔
         </p>
         <RouterLink
-          :to="{ name: 'home' }"
+          :to="{ name: 'diablo3-home' }"
           class="rounded-md bg-gray-700 px-4 py-2 font-semibold text-white"
           >Home</RouterLink
         >

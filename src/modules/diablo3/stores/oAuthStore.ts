@@ -38,7 +38,7 @@ const useOauthStore = defineStore("oAuthStore", {
         console.warn("token from API");
       } catch (error) {
         this.isLoading = false;
-        console.error(error);
+        throw new Error(`${error}`);
       }
     },
     clearToken(): void {

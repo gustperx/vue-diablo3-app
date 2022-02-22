@@ -5,6 +5,6 @@ export interface ErrorState {
 }
 
 export interface ErrorGlobal {
-  userParams: ProfileParameters;
+  userParams?: ProfileParameters;
   message: string;
 }
