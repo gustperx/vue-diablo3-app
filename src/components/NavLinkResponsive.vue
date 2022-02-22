@@ -15,7 +15,7 @@ const isExternalLink = computed(() => props.to.startsWith("http"));
 <template>
   <a
     v-if="isExternalLink"
-    class="block rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-sky-800 hover:text-white"
+    class="hover:gray-sky-800 block rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:text-white"
     :href="to"
     target="_blank"
     >{{ name }}</a
@@ -32,8 +32,8 @@ const isExternalLink = computed(() => props.to.startsWith("http"));
       :href="href"
       :class="
         isActive
-          ? 'bg-teal-600 text-white'
-          : 'text-gray-200 hover:bg-sky-800 hover:text-white'
+          ? 'bg-gray-700 text-white'
+          : 'text-gray-200 hover:bg-gray-800 hover:text-white'
       "
       @click="navigate"
       >{{ name }}</a
