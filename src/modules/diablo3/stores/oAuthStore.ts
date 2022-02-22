@@ -2,8 +2,18 @@ import { defineStore } from "pinia";
 import { blizzardOauhtApi } from "../api/oauth";
 import type { oAuthState } from "../interfaces/oAuthStore";
 
-const clientId: string = import.meta.env.VITE_DIABLO3_APP_CLIENT_ID;
-const clientSecret: string = import.meta.env.VITE_DIABLO3_APP_CLIENT_SECRET;
+let clientId: string;
+let clientSecret: string;
+if (
+  import.meta.env.VITE_DIABLO3_APP_CLIENT_ID &&
+  import.meta.env.VITE_DIABLO3_APP_CLIENT_SECRET
+) {
+  clientId = import.meta.env.VITE_DIABLO3_APP_CLIENT_ID;
+  clientSecret = import.meta.env.VITE_DIABLO3_APP_CLIENT_SECRET;
+} else {
+  clientId = process.env.DIABLO3_APP_CLIENT_ID;
+  clientSecret = process.env.DIABLO3_APP_CLIENT_SECRET;
+}
 
 const useOauthStore = defineStore("oAuthStore", {
   state: (): oAuthState => {

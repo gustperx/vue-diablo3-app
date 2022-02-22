@@ -5,7 +5,10 @@ const useMedia = () => {
     64: 64,
   };
 
-  const host = "http://media.blizzard.com/d3/icons/";
+  let host = "/images/";
+  if (import.meta.env.VITE_URL_IMG) {
+    host = "http://media.blizzard.com/d3/icons/";
+  }
 
   return {
     mediaSkill: (icon: string): string => {
