@@ -7,7 +7,7 @@ const useMedia = () => {
 
   let host = "/images/";
   if (import.meta.env.VITE_URL_IMG) {
-    host = <string>import.meta.env.VITE_URL_IMG;
+    host = "http://media.blizzard.com/d3/icons/";
   }
 
   return {

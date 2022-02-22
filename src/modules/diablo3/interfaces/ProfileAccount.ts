@@ -111,3 +111,7 @@ export interface Artisan {
   normal?: Blacksmith;
   hardcore?: Blacksmith;
 }
+
+export interface TimePlayedGeneric {
+  [key: string]: number;
+}

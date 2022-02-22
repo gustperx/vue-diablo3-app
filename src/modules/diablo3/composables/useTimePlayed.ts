@@ -1,9 +1,9 @@
 import { computed } from "vue";
 import { textToCapitalize } from "@/helpers/basics";
 import { HeroData } from "../classes/HeroData";
-import type { TimePlayed } from "../interfaces/ProfileAccount";
+import type { TimePlayedGeneric } from "../interfaces/ProfileAccount";
 
-const useTimePlayed = (timePlayed: TimePlayed) => {
+const useTimePlayed = (timePlayed: TimePlayedGeneric) => {
   const timeProcess = (): HeroData[] => {
     return Object.keys(timePlayed)
       .sort()

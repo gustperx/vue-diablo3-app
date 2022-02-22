@@ -4,10 +4,10 @@
       <div class="hero-detail-avatar" :class="heroClass"></div>
     </div>
     <div class="text-center">
-      <h1 class="my-4 font-diablo text-3xl text-bone">{{ hero.name }}</h1>
+      <h1 class="font-diablo text-bone my-4 text-3xl">{{ hero.name }}</h1>
     </div>
     <div class="flex flex-col items-center justify-center">
-      <div class="text-md mb-1 font-mono font-bold text-bone">
+      <div class="text-md text-bone mb-1 font-mono font-bold">
         <span>{{ hero.level }}</span>
 
         <span class="text-blue-400" v-if="hero.paragonLevel">
