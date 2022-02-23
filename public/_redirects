@@ -1,2 +1,3 @@
 /* /index.html 200
-/images/*  http://media.blizzard.com/d3/icons/:splat  200
+/images/* http://media.blizzard.com/d3/icons/:splat  200
+/img/* https://res.cloudinary.com/dpfdgvz5b/image/upload/:splat  200

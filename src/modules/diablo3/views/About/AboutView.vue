@@ -23,7 +23,7 @@
         <div class="basis-1/3">
           <div class="flex flex-col items-center justify-center">
             <img
-              src="https://res.cloudinary.com/dpfdgvz5b/image/upload/v1645481860/me/wqhrzgamalb9kl7nwifu.png"
+              src="/img/v1645481860/me/wqhrzgamalb9kl7nwifu.png"
               class="mb-8 h-60 w-60 md:mb-0"
               alt="gustperx"
             />
