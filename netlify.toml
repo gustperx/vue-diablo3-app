@@ -1,0 +1,9 @@
+[[redirects]]
+  from = "/img/*"
+  to = "https://res.cloudinary.com/dpfdgvz5b/image/upload/:splat"
+  status = 200
+
+[[redirects]]
+  from = "/images/*"
+  to = "http://media.blizzard.com/d3/icons/:splat"
+  status = 200
