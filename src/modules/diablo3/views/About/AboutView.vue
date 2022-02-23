@@ -23,7 +23,7 @@
         <div class="basis-1/3">
           <div class="flex flex-col items-center justify-center">
             <img
-              src="/img/v1645481860/me/wqhrzgamalb9kl7nwifu.png"
+              :src="mediaCloudinary('v1645481860/me/wqhrzgamalb9kl7nwifu.png')"
               class="mb-8 h-60 w-60 md:mb-0"
               alt="gustperx"
             />
@@ -72,4 +72,7 @@
 
 <script lang="ts" setup>
 import ItemContact from "@/components/ItemContact.vue";
+import { useMedia } from "../../composables/useMedia";
+
+const { mediaCloudinary } = useMedia();
 </script>

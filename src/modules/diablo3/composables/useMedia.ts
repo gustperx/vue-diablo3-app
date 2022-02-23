@@ -7,7 +7,12 @@ const useMedia = () => {
 
   let host = "/images/";
   if (import.meta.env.VITE_URL_IMG) {
-    host = "http://media.blizzard.com/d3/icons/";
+    host = <string>import.meta.env.VITE_URL_IMG;
+  }
+
+  let cloudinary = "/img/";
+  if (import.meta.env.VITE_URL_CLOUDINATY) {
+    cloudinary = <string>import.meta.env.VITE_URL_CLOUDINATY;
   }
 
   return {
@@ -19,6 +24,9 @@ const useMedia = () => {
     },
     mediaGem: (icon: string): string => {
       return `${host}items/small/${icon}.png`;
+    },
+    mediaCloudinary: (path: string): string => {
+      return `${cloudinary}${path}`;
     },
   };
 };
