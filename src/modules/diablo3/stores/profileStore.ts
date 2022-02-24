@@ -63,7 +63,7 @@ const useProfileStore = defineStore("profileStore", {
 
         this.profile = data;
         this.isLoading = false;
-        console.warn("profile from Api");
+        //console.warn("profile from Api");
       } catch (err) {
         this.isLoading = false;
         throw new Error(`${err}`);
@@ -92,7 +92,7 @@ const useProfileStore = defineStore("profileStore", {
         });
 
         this.hero = data;
-        console.warn("hero from Api");
+        //console.warn("hero from Api");
       } catch (error) {
         throw new Error(`${error}`);
       }
@@ -120,7 +120,7 @@ const useProfileStore = defineStore("profileStore", {
         });
 
         this.heroItems = data;
-        console.warn("hero items from Api");
+        //console.warn("hero items from Api");
       } catch (error) {
         throw new Error(`${error}`);
       }

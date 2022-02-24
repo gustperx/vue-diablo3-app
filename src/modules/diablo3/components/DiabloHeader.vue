@@ -7,17 +7,25 @@
         >
           <div class="flex flex-shrink-0 items-center">
             <img
-              src="https://res.cloudinary.com/dpfdgvz5b/image/upload/v1644710868/diablo3/sljwip6lsi5le4da7fjm.svg"
+              :src="
+                mediaCloudinary('v1644710868/diablo3/sljwip6lsi5le4da7fjm.svg')
+              "
               class="h-8 w-8"
               alt="D3"
             />
-            <span class="ml-2 font-diablo text-bone">D3PF</span>
+            <span class="font-diablo text-bone ml-2">D3PF</span>
           </div>
           <div class="hidden md:block">
-            <span class="mr-2 font-diablo text-bone">25</span>
+            <span class="font-diablo text-bone mr-2">25</span>
           </div>
         </div>
       </div>
     </div>
   </nav>
 </template>
+
+<script lang="ts" setup>
+import { useMedia } from "@/modules/diablo3/composables/useMedia";
+
+const { mediaCloudinary } = useMedia();
+</script>

@@ -5,7 +5,9 @@
         <i :class="icoName" class="fa-2xl" :style="{ color: icoColor }"> </i>
       </div>
       <div>
-        <h4 class="mb-0 text-xl font-bold text-gray-400">{{ info.value }}</h4>
+        <h4 class="mb-0 text-xl font-bold text-gray-400">
+          {{ formatNumber(info.value) }}
+        </h4>
         <span class="mb-0 text-sm font-normal text-gray-300">{{
           info.text
         }}</span>
@@ -15,6 +17,8 @@
 </template>
 
 <script lang="ts" setup>
+import { useNumeral } from "@/modules/diablo3/composables/useNumeral";
+
 interface InfoData {
   value: number;
   text: string;
@@ -25,4 +29,6 @@ defineProps<{
   icoColor: string;
   info: InfoData;
 }>();
+
+const { formatNumber } = useNumeral();
 </script>

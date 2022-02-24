@@ -9,7 +9,7 @@
     </span>
     <img
       v-if="heroe.seasonal"
-      src="https://res.cloudinary.com/dpfdgvz5b/image/upload/v1644710868/diablo3/xj12ru7yh3s3hxbas8kd.png"
+      :src="mediaCloudinary('v1644710868/diablo3/xj12ru7yh3s3hxbas8kd.png')"
       class="ml-2 h-4"
       alt="seasonal_leaf"
     />
@@ -18,6 +18,7 @@
 
 <script lang="ts" setup>
 import { useHero } from "@/modules/diablo3/composables/useHero";
+import { useMedia } from "@/modules/diablo3/composables/useMedia";
 import type { Hero } from "@/modules/diablo3/interfaces/ProfileAccount";
 
 const props = defineProps<{
@@ -27,6 +28,8 @@ const props = defineProps<{
 const { heroClassImg, heroName, hardcoreBgColor, goToHero } = useHero({
   ...props.heroe,
 });
+
+const { mediaCloudinary } = useMedia();
 </script>
 
 <style scoped>

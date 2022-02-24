@@ -7,7 +7,9 @@
           <span>{{ resources.life.name }}</span>
         </div>
         <div class="ml-3">
-          <span class="text-monospace"> {{ resources.life.value }} </span>
+          <span class="text-monospace">
+            {{ formatNumber(resources.life.value) }}
+          </span>
         </div>
       </div>
     </div>
@@ -23,10 +25,12 @@
         </div>
         <div class="ml-3">
           <span class="font-mono">
-            {{ resources.primaryResource.value }}
+            {{ formatNumber(resources.primaryResource.value) }}
             <template v-if="hasSecondaryResource(classSlug)">
               <span class="mx-0 text-gray-400">/</span>
-              <span> {{ resources.secondaryResource.value }} </span>
+              <span>
+                {{ formatNumber(resources.secondaryResource.value) }}
+              </span>
             </template>
           </span>
         </div>
@@ -37,6 +41,7 @@
 
 <script lang="ts" setup>
 import { useAttribute } from "@/modules/diablo3/composables/useAttribute";
+import { useNumeral } from "@/modules/diablo3/composables/useNumeral";
 import type {
   HeroAttribute,
   HeroResourse,
@@ -49,6 +54,8 @@ defineProps<{
 
 const { classResourceName, displayResourceName, hasSecondaryResource } =
   useAttribute();
+
+const { formatNumber } = useNumeral();
 </script>
 
 <style scoped>

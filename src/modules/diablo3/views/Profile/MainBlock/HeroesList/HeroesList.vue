@@ -1,5 +1,5 @@
 <template>
-  <h3 class="my-4 font-diablo text-2xl text-bone">Hero List</h3>
+  <h3 class="font-diablo text-bone my-4 text-2xl">Hero List</h3>
 
   <table class="w-full table-auto border-collapse text-sm md:table-fixed">
     <thead>
@@ -22,7 +22,9 @@
           <HeroesListClass :heroe="hero" />
         </td>
         <td class="border-b border-slate-100 p-4 pr-8 text-slate-200">
-          <span class="text-gray-400">{{ hero.kills.elites }}</span>
+          <span class="text-gray-400">{{
+            formatNumber(hero.kills.elites)
+          }}</span>
         </td>
       </tr>
     </tbody>
@@ -33,8 +35,11 @@
 import type { Hero } from "@/modules/diablo3/interfaces/ProfileAccount";
 import HeroesListIcono from "./HeroesListIcono.vue";
 import HeroesListClass from "./HeroesListClass.vue";
+import { useNumeral } from "@/modules/diablo3/composables/useNumeral";
 
 defineProps<{
   heroes: Hero[];
 }>();
+
+const { formatNumber } = useNumeral();
 </script>

@@ -6,8 +6,8 @@ const useMedia = () => {
   };
 
   let host = "/images/";
-  if (import.meta.env.VITE_URL_IMG) {
-    host = <string>import.meta.env.VITE_URL_IMG;
+  if (import.meta.env.VITE_URL_DIABLO_IMG) {
+    host = <string>import.meta.env.VITE_URL_DIABLO_IMG;
   }
 
   let cloudinary = "/img/";
