@@ -1,7 +1,7 @@
 <template>
   <div class="about-view mb-5">
     <div class="text-center">
-      <h1 class="my-12 text-4xl text-bone">Diablo 3 Profile Finder</h1>
+      <h1 class="text-bone my-12 text-4xl">Diablo 3 Profile Finder</h1>
 
       <hr class="mb-5 bg-gray-900" />
 
